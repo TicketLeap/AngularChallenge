@@ -1,0 +1,34 @@
+<div class="container" ng-controller="SearchController as srchCtrl">
+		<h4> SEARCH <small> beta </small></h4>
+		<div class="alert alert-info">
+				Right now, search only indexes on tickets, so you can't yet search by 
+				ticket comment.  Also, the quality of the results is going to improve 
+				over time.  Rather than filing new bugs, please just comment on 
+				<a href="http://sherlock-dev.ticketleap.com/info/tickets/SHR-24/"> this ticket </a> 
+				with suggestions or problems. 
+		</div>
+		<form ng-submit="search()">
+				<div class="input-group"> 
+						<input type="text" ng-model="searchTerm" class="form-control" id="searchQuery" ng-keyup="setpath()"> 
+						<div class="input-group-addon"> 
+								<button type="submit" ng-click=""><i class="fa fa-search"></i> </button>
+						</div>
+				</div>
+		</form>
+		<div ng-show="searching">
+				<img src="http://img.ffffound.com/static-data/assets/6/f71fbabb835aebca4489ba2e0d5cd6aff3ad528c_m.gif" alt="Loading..."/>
+		</div>
+		<div id="results" ng-show="searchResults">
+				<div ng-show="searchResults.tickets">
+						<h3> TICKETS </h3> 
+						<div class="panel" ng-repeat="ticket in searchResults.tickets" ng-click="goto(ticket)" style="cursor: pointer;">
+								<div class="panel-heading">
+										{{ticket.project_short_code}}-{{ticket.number}} | {{ticket.header}}
+										<span class="pull-right"> {{ticket.status_str.toUpperCase()}} </span>
+								</div>
+								<div class="panel-body" ng-bind-html="ticket.description">
+								</div>
+						</div>
+				</div>
+		</div>
+</div>

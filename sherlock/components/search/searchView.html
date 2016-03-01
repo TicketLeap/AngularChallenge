@@ -10,17 +10,7 @@
 				</div>
 		</form>
 		<div id="results" ng-show="searchResults">
+				Matching Data: <br>
 				{{searchResults}}
-				<div ng-show="searchResults.tickets">
-						<h3> TICKETS </h3> 
-						<div class="panel" ng-repeat="ticket in searchResults.tickets" ng-click="goto(ticket)" style="cursor: pointer;">
-								<div class="panel-heading">
-										{{ticket.project_short_code}}-{{ticket.number}} | {{ticket.header}}
-										<span class="pull-right"> {{ticket.status_str.toUpperCase()}} </span>
-								</div>
-								<div class="panel-body" ng-bind-html="ticket.description">
-								</div>
-						</div>
-				</div>
 		</div>
 </div>

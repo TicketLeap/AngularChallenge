@@ -1,11 +1,11 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
+//
 angular.module('sherlock', [
   'ngRoute',
   'sherlock.Search',
-  'sherlock.view2',
-  'sherlock.version'
+  // Add any additional modules here
 ]).
 
 config(['$routeProvider', function($routeProvider) {

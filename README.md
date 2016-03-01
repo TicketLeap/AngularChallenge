@@ -2,6 +2,20 @@
 
 Welcome to the Angular Challenge for Ticketleap.  Here at Ticketleap we've rolled our own custom issue tracker, called Sherlock, to try and deal with some of the problems we had with existing issue trackers.  In this repo, you'll find a stripped down version of the front-end portion of the application, along with some sample issue data sourced in part from the Sherlock API.  
 
+## Getting Started
+To get going, make sure you have both `nodejs`, `npm` and `bower` on your system.  From the challenge directory, run: 
+
+```
+npm install 
+```
+And make sure everything runs smoothly.  This will get angular installed for you.  Once all is well, run 
+
+```
+npm start 
+```
+
+to get a lightweight server going to test your project out.  Going to `localhost:8000/sherlock/` in your browser should bring up your work. **If you have trouble getting off the ground** let us know.  We're not testing how well you can debug an installation process, and we haven't tested this setup on every system out there.  
+
 ## The Challenge
 We've provided a bare-bones version of our search page, where typing in queries will dump raw JSON of matching issues/tickets (we use the terms interchangeably) from the sample data to the page.  The full version connects to a search backend within our site, but this version just draws from a fixture file in the repo.  
 
